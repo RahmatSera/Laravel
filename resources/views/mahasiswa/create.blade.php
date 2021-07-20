@@ -10,41 +10,62 @@
                 <div class="card-body">
                     <form action="{{ route('simpan.mahasiswa') }}" method="post">
                         @csrf
-                        <div class="form-group">
-                                
-                            <div class="form-group">
+                        
+                        <div class="form-group">       
+                            <div class="form-row">
+                                <div class="col">
+                                <label for="">NAMA MAHASISWA </label>
+                                <select name="user_id" id="user_id" class="form-control">
+                                    <option value="" disabled selected>---Pilih User---</option>
+                                    @foreach ($user as $u)
+                                    <option value="{{ $u->id}}" >{{ $u->name }}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+
+                            <div class="col">
                                 <label for="">NPM</label>
-                                <input type="text" name="npm" class="form-control" placeholder="Tambahkan NPM">
+                                <input type="number" name="npm" class="form-control" placeholder="Tambahkan NPM" maxlength="5">
                             </div>
 
-                            <div class="form-group">
-                                <label for="">NAMA MAHASISWA</label>
-                                <input type="text" name="nama_mahasiswa" class="form-control" placeholder="Tambahkan Nama">
-                            </div>
-
-                            <div class="form-group">
+                            <div class="col">
                                 <label for="">TEMPAT LAHIR</label>
                                 <input type="text" name="tempat_lahir" class="form-control" placeholder="Tambahkan Tempat Lahir">
                             </div>
+                            </div>
+                        </div>
 
-                            <div class="form-group">
+                            <div class="form-group">       
+                                <div class="form-row">
+
+                            <div class="col">
                                 <label for="">TANGGAL LAHIR</label>
                                 <input type="date" name="tgl_lahir" class="form-control" placeholder="Tambahkan Tanggal Lahir">
                             </div>
 
-                            <div class="form-group">
+                            <div class="col">
                                 <label for="">JENIS KELAMIN</label>
-                                <input type="text" name="jenis_kelamin" class="form-control" placeholder="Tambahkan Jenis Kelamin">
+                               <select name="jenis_kelamin" id="jenis_kelamin" class="form-control">
+                                   <option value="" disabled selected>---Pilih Jenis Kelamin---</option>
+                                   <option value="L">Laki-Laki</option>
+                                   <option value="P">Perempuan</option>
+                               </select>
                             </div>
 
-                            <div class="form-group">
+                            <div class="col">
                                 <label for="">TELEPON</label>
                                 <input type="text" name="telepon" class="form-control" placeholder="Tambahkan Telepon">
                             </div>
+                                </div>
+                            </div>
 
-                            <div class="form-group">
+
+                            <div class="form-group">       
+                                <div class="form-row">
+
+                            <div class="col">
                                 <label for="">ALAMAT</label>
-                                <input type="text" name="alamat" class="form-control" placeholder="Tambahkan Alamat" >
+                              <textarea name="alamat" id="alamat" cols="2" rows="3" class="form-control" style="resize: none"></textarea>
                             </div>
                             
                         </div>
